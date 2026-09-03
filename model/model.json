@@ -1,0 +1,18 @@
+{
+  "intercept": -12.307,
+  "coefficients": {
+    "SHS_GPA": 0.141,
+    "Sex": -0.997,
+    "Strand_Favorable": 1.092
+  },
+  "feature_order": [
+    "SHS_GPA",
+    "Sex",
+    "Strand_Favorable"
+  ],
+  "instructions": {
+    "SHS_GPA": "Use raw GPA value (e.g., 87.5)",
+    "Sex": "Male=1, Female=0",
+    "Strand_Favorable": "STEM or TVL-ICT=1, Others=0"
+  }
+}

@@ -1,0 +1,403 @@
+/* Modern Minimalist Index/Form Styles */
+
+/* Design System Variables */
+:root {
+  /* Spacing Scale */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Colors - Green Theme */
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-500: #16a34a;
+  --green-600: #15803d;
+  --green-700: #166534;
+  
+  /* Neutral Colors */
+  --gray-50: #fafbfa;
+  --gray-100: #f5f6f5;
+  --gray-200: #e5e7e5;
+  --gray-300: #d1d5d1;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7566;
+  --gray-600: #4b5147;
+  --gray-700: #2d3a2d;
+  --gray-900: #1a1f1a;
+}
+
+/* Background Animation - Hidden for Clean Look */
+.background-animation {
+  display: none;
+}
+
+/* Container Reset for Dashboard Integration */
+.container {
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  max-height: none;
+  overflow-y: visible;
+  animation: none;
+}
+
+/* Header Section - Hidden in Dashboard View */
+.header-section {
+  display: none;
+}
+
+/* Status Badge - Minimal Design */
+.status-badge-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-lg);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.status-active {
+  background: var(--green-50);
+  color: var(--green-700);
+  border-color: var(--green-200);
+}
+
+.status-active i {
+  color: var(--green-500);
+  font-size: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.status-error i {
+  color: #dc2626;
+  font-size: 8px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Error Banner - Clean Design */
+.error-banner {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.error-banner i {
+  color: #dc2626;
+  font-size: 20px;
+  margin-top: 2px;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.error-banner div {
+  flex: 1;
+}
+
+.error-banner strong {
+  display: block;
+  color: #991b1b;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.error-banner p {
+  color: #7f1d1d;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Form Grid - Simplified 2-Column Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* Form Groups - Clean Spacing */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Labels - Refined Typography */
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--gray-700);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+}
+
+.form-group label i {
+  color: var(--primary);
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.required-star {
+  color: #dc2626;
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.optional-tag {
+  margin-left: auto;
+  font-size: 11px;
+  background: var(--gray-100);
+  color: var(--gray-500);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Inputs - Modern Styling */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background: white;
+  font-family: inherit;
+  color: var(--gray-900);
+  letter-spacing: -0.01em;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: var(--gray-300);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(14, 36, 18, 0.06);
+}
+
+.form-group input::placeholder {
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+/* Select Wrapper - Custom Dropdown */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  appearance: none;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-500);
+  pointer-events: none;
+  transition: color 0.2s ease;
+  font-size: 14px;
+}
+
+.select-wrapper:hover .select-arrow {
+  color: var(--primary);
+}
+
+/* Field Hints - Subtle Helper Text */
+.field-hint {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-top: 4px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Progress Bar - Minimal Design */
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: var(--spacing-xs);
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--green-500), var(--green-600));
+  border-radius: 10px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Button Container - Clean Separator */
+.button-container {
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-100);
+}
+
+/* Error Animation - Subtle Shake */
+.error-shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .form-grid {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .full-width {
+    grid-column: span 1;
+  }
+  
+  .form-group input,
+  .form-group select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-grid {
+    gap: var(--spacing-sm);
+  }
+  
+  .error-banner {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .error-banner i {
+    font-size: 18px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .background-animation,
+  .status-badge-container,
+  .button-container {
+    display: none;
+  }
+
+  .form-card {
+    box-shadow: none;
+    border: 1px solid var(--gray-200);
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Visible for Keyboard Navigation */
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.btn-primary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .form-group input,
+  .form-group select {
+    border-width: 2px;
+  }
+  
+  .status-badge {
+    border-width: 2px;
+  }
+}
