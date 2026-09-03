@@ -1,0 +1,14 @@
+{
+    "name": "gradetrack/predictor",
+    "description": "Gradetrack Graduation Predictor System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpoffice/phpspreadsheet": "^1.28",
+        "dompdf/dompdf": "^3.1"
+    },
+    "config": {
+        "platform-check": false,
+        "optimize-autoloader": true
+    }
+}
